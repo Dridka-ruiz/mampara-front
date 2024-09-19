@@ -168,7 +168,7 @@ const IncompletoFromDialog = ({
       onClose();
     }
   };
-
+  /* cambios */
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>{"Producto Pausado"}</DialogTitle>
