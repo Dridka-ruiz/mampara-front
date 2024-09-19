@@ -1,0 +1,78 @@
+/* AlertaTemporada.css */
+.alerta-container {
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left-width: 10px;
+    border-left-style: solid;
+  }
+  
+  .alerta-container.invierno {
+    background-color: blue;
+    border-left-color: blue;
+  }
+  
+  .alerta-container.primavera {
+    background-color: #fbd0d5;
+    border-left-color: #d5294d;
+  }
+  
+  .alerta-container.verano {
+    background-color: #d3eac8;
+    border-left-color: #4c8435;
+  }
+  
+  .alerta-container.otono {
+    background-color: brown;
+    border-left-color: brown;
+  }
+  
+  .title {
+    margin: 0px;
+    color: inherit;
+  }
+  
+  .subtitle {
+    margin: 0px;
+    color: inherit;
+  }
+  
+  .content {
+    margin: 0px;
+    color: inherit;
+  }
+  
+  /* Specific text colors */
+  .invierno .title,
+  .invierno .subtitle,
+  .invierno .content {
+    color: blue;
+  }
+  
+  .primavera .title {
+    color: #48091a;
+  }
+  .primavera .subtitle {
+    color: #811a39;
+  }
+  .primavera .content {
+    color: #d5294d;
+  }
+  
+  .verano .title,
+  .verano .subtitle,
+  .verano .content {
+    color: green;
+  }
+  
+  .otono .title,
+  .otono .subtitle,
+  .otono .content {
+    color: brown;
+  }
+  
+
+.posicionText{
+    display: flex;
+    gap: 1rem;
+}

@@ -1,0 +1,50 @@
+ .styleHover:hover {
+    background-color: #9fabb1 !important;
+ 
+
+} 
+.styleHover2:hover {
+   
+    color: #f7f7f7 !important ;
+}
+.styleTable{
+    background-color:#026773 !important;
+    color: #ffff !important;
+}
+
+.positionTable{
+    margin: 2rem;
+}
+
+.posicionamientoEtiquetas{
+    display: flex;
+    justify-content:center;
+}
+
+.styleTable2{
+    background-color:#025373 !important;
+    color: #ffff !important;
+}
+
+
+.styleKilosHora {
+    background-color: #6374ae;
+  }
+
+
+.styleTableMampara{
+    background-color:#026773 !important;
+    color: #ffff !important;
+   /*  padding: 2px !important;
+    padding-left: 15px !important; */
+    font-size: 17px !important;
+}
+
+/* VerticalTabs.css */
+.tab {
+    transition: color 0.3s;
+  }
+  
+  .tab:hover {
+    background: #b3e1ff; /* Color de texto cuando el cursor está sobre la pestaña */
+  }

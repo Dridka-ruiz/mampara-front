@@ -1,0 +1,91 @@
+
+
+.icon-react{
+    width: 60px;
+}
+
+.column{
+
+    display: flex;
+    flex-direction: row;
+/*     background-color: #434549; */
+    background-image: url("../../../../public/img/madera.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100px;
+    padding: 5px 5px;
+/*     border-radius: 8px; */
+  /*   border: 1px solid; */
+    border-top: 1px solid #369;
+ /*    border-bottom: 2px solid #369; */
+    box-shadow: 0 8px 16px rgba(#333, 0.1);
+}
+
+.column--1{
+    border-color: #707070;
+}
+
+.column--1 .title{
+    color: #FF9E4A;
+}
+
+.column--2{
+    border-color: #C56BE2;
+}
+
+.column--2 .title{
+    color: #C56BE2;
+}
+
+.column--3{
+    border-color: #6FD2AF;
+}
+
+.column--3 .title{
+    color: #6FD2AF;
+}
+
+/* DRAG AND DROP */
+.drag-and-drop{
+    display: flex;
+    grid-gap: 10px;
+    flex-direction: column;
+}
+
+.dd-zone{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 16px;
+    height: 100%;
+}
+
+.dd-element{
+   /*  font-size: 18px; */
+    background-color: #FFFFFF;
+    border-radius: 8px;
+  /*   padding: 16px 10px; */
+    cursor: pointer;
+    color: #5b5b73;
+    width: 220px;
+    border: solid 1px #5b5b73;
+    padding: 7px;
+}
+
+.dd-element .body{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.tittle-style{
+    border: 1px solid;
+    border-color: #707070;
+    padding: 15px;
+    height: 15%;
+    border-radius: 8px;
+}
+.espacioColumna{
+
+    margin-right: 3%;
+}

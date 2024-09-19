@@ -1,0 +1,146 @@
+.linea-etiqueta{
+    height: 2px;
+    background-color: rgb(126, 126, 126);
+    margin: 0px;
+}
+
+.separacionCard{
+    margin-top: 3% !important;
+}
+.spaciadoEtiquetaLetras{
+    margin: 0px;
+}
+
+.select-formulario{
+    width: 50% !important ;
+   
+    margin-bottom: 1rem;
+}
+
+.styleBotton{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.sepadadorInferior{
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 1rem;
+}
+.etiqueta-inactiva {
+ 
+    background-color: #FFC924;
+  }
+
+.etiqueta2{
+    width: 37px;
+    height: 35px;
+    display: flex;
+  /*   justify-content: center; */
+    justify-content: flex-end;
+
+    border-radius: 50%;
+
+}
+.acomodoEtiquetas{
+    display: flex;
+    align-items: center;
+    height: 180px;
+}
+
+.interlineadoP{
+    margin: 0px;
+    margin-block-end: -1rem;
+}
+
+.fechasOrdenes{
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+.styleKilos{
+  width: 30%;
+}
+
+
+/* incremneto de los kilos */
+/* Agregar en tu hoja de estilos CSS */
+/* .kilos-mayores {
+    color: rgb(223, 182, 0); 
+  } */
+  
+.styloTipoMolinos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -6px 0.5rem;
+    justify-content: space-between;
+}
+
+/* diseño de incrementos */
+
+.colorIncremento{
+    margin-top: 0px;
+    color: #005db9;
+    font-weight: bold;
+}
+.colorImcrementoKilos{
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+
+/* ESTILO DE POLVIOS Y URGENTE */
+.colorUrgente{
+color: red;
+}
+.firmatoDiseño{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.espaciadoPolvos{
+    margin: 0px;
+}
+
+
+.espaciadoUrgencia{
+    margin: 0px;
+    font-size: 25px;
+}
+
+/* implementacion de alertas */
+.alertaMensaje{
+    text-align: center;
+    margin-top: 10px;
+    color: red;
+    margin: 0px;
+   display: flex;
+   justify-content: center;
+
+}
+
+.comentario{
+border-radius: 25px;
+background-color: rgba(240, 0, 0, 0.856);
+animation: vibration 0.9s infinite;
+color: rgb(255, 255, 255);
+display: flex;
+justify-content: center;
+
+
+}
+
+
+@keyframes vibration {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(2px) translateY(1px); }
+    50% { transform: translateX(-2px) translateY(-1px); }
+    75% { transform: translateX(2px) translateY(1px); }
+    100% { transform: translateX(0); }
+  }

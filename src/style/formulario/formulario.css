@@ -1,0 +1,14 @@
+.tamañoFormulario{
+    width: 100px;
+}
+
+
+.pocicionamiento{
+    display: flex;
+     gap: 1rem; 
+    flex-direction: column;
+}
+.posicionamientoLAB{
+    display: flex;
+    gap: 0.5rem;
+}

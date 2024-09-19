@@ -1,0 +1,36 @@
+// generalData.js
+const generalData = [
+  { fecha_real: "01/02/2024", general: 45323 },
+  { fecha_real: "02/02/2024", general: 45324 },
+  { fecha_real: "03/02/2024", general: 45325 },
+  { fecha_real: "04/02/2024", general: 45326 },
+  { fecha_real: "05/02/2024", general: 45327 },
+  { fecha_real: "06/02/2024", general: 45328 },
+  { fecha_real: "07/02/2024", general: 45329 },
+  { fecha_real: "08/02/2024", general: 45330 },
+  { fecha_real: "09/02/2024", general: 45331 },
+  { fecha_real: "10/02/2024", general: 45332 },
+  { fecha_real: "11/02/2024", general: 45333 },
+  { fecha_real: "12/02/2024", general: 45334 },
+  { fecha_real: "13/02/2024", general: 45335 },
+  { fecha_real: "14/02/2024", general: 45336 },
+  { fecha_real: "15/02/2024", general: 45337 },
+  { fecha_real: "16/02/2024", general: 45338 },
+  { fecha_real: "17/02/2024", general: 45339 },
+  { fecha_real: "18/02/2024", general: 45340 },
+  { fecha_real: "19/02/2024", general: 45341 },
+  { fecha_real: "20/02/2024", general: 45342 },
+  { fecha_real: "21/02/2024", general: 45343 },
+  { fecha_real: "22/02/2024", general: 45344 },
+  { fecha_real: "23/02/2024", general: 45345 },
+  { fecha_real: "24/02/2024", general: 45346 },
+  { fecha_real: "25/02/2024", general: 45347 },
+  { fecha_real: "26/02/2024", general: 45348 },
+  { fecha_real: "27/02/2024", general: 45349 },
+  { fecha_real: "28/02/2024", general: 45350 },
+  { fecha_real: "29/02/2024", general: 4531 },
+
+  { fecha_real: "31/12/2024", general: 45608 },
+];
+
+export default generalData;

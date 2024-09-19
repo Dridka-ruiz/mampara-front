@@ -1,0 +1,10 @@
+.contenedoruser{
+    margin: 8px;
+  background-color: rgb(46, 112, 156); 
+ width: 70%;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}

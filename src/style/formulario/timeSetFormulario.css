@@ -1,0 +1,15 @@
+.tamañoDato{
+    width: 100px !important;
+}
+.tamañoFecha{
+    width: 250;
+}
+
+.acomodoHora{
+    display: flex;
+    gap: 0.5rem;
+}
+.separacion{
+    margin-top: 0.5rem !important;
+}
+

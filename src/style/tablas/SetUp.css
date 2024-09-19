@@ -1,0 +1,98 @@
+.styleTable3{
+    background-color:#123749 !important;
+    color: #ffff !important;
+}
+
+/* .styleHover1:hover {
+    background-color: #ddd9e6 !important;
+
+}
+ */
+/* SetUp.css */
+.tiempos-cell-id1 {
+    background-color: #d5f3f8a3; /* Color para ids impares */
+  }
+  
+  .tiempos-cell-id2 {
+    background-color: #1e9ebc69; /* Color para ids pares */
+  }
+  
+  .distancia-cell-id1 {
+    background-color: #faebd7; /* Color para ids impares */
+  }
+  
+  .distancia-cell-id2 {
+    background-color: #ffefd5; /* Color para ids pares */
+  }
+  
+  .styleTable {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+ /* SetUp.css */
+
+ .styleTableAcabado3{
+  background-color:#211249 !important;
+  color: #ffff !important;
+}
+ .acabado-cell-id1 {
+  background-color: #f1d5f8a3; /* Color para ids impares */
+}
+
+.acabado-cell-id2 {
+  background-color: #bc1ebc69; /* Color para ids pares */
+}
+
+.acabado-cell-id1 {
+  background-color: #e7d7fa; /* Color para ids impares */
+}
+
+.acabado-cell-id2 {
+  background-color: #f7eeff; /* Color para ids pares */
+}
+
+
+/* diseño de sistema */
+.styleTableAcabado4{
+  background-color:#24771e!important;
+  color: #ffff !important;
+}
+ .sistema-cell-id1 {
+  background-color: #dbf8d5a3; /* Color para ids impares */
+}
+
+.sistema-cell-id2 {
+  background-color: #205f1c; /* Color para ids pares */
+}
+
+.sistema-cell-id1 {
+  background-color: #c5f2c0; /* Color para ids impares */
+}
+
+.sistema-cell-id2 {
+  background-color: #e1f9df; /* Color para ids pares */
+}
+
+/* diseño de brillo */
+.styleTableBrillo{
+  background-color:#bc7d12!important;
+  color: #ffff !important;
+}
+ .brillo-cell-id1 {
+  background-color: #f8f0d5a3; /* Color para ids impares */
+}
+
+.brillo-cell-id2 {
+  background-color: #5f551c; /* Color para ids pares */
+}
+
+.brillo-cell-id1 {
+  background-color: #f6e592; /* Color para ids impares */
+}
+
+.brillo-cell-id2 {
+  background-color: #faf3c7; /* Color para ids pares */
+}
+
+

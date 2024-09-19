@@ -1,0 +1,13 @@
+/* etiquetas.css */
+
+  
+  .etiqueta-duplicada {
+    /* Estilos para etiquetas duplicadas */
+    border-color: rgb(158, 0, 26);
+    box-shadow: 0 0 20px #F20CCC;
+  }
+  .borde-duplicado {
+    border: 2px solid red; /* Estilo del borde para etiquetas duplicadas */
+    box-shadow: 0 0 20px #F20CCC;
+
+  }

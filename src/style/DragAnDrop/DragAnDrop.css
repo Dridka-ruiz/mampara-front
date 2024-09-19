@@ -1,0 +1,82 @@
+.etiqueta{
+    border-radius: 5px;
+    border: 1px solid rgb(110, 110, 110);
+   /*  padding: 8px; */
+ /*    height: 90%; */
+    width: 340px;
+    background-color: white;
+}
+.position{
+    display: flex;
+    gap: 1%;
+}
+.position2{
+    display: flex;
+  
+    justify-content: space-around;
+}
+
+.tittle{
+    border-radius: 5px;
+    border: 1px solid rgb(110, 110, 110);
+    width: 130PX;
+   font-size: 20px;
+   padding: 5px;
+   background-color: white;
+}
+.tittleEtiquetas{
+    border-radius: 5px;
+    border: 1px solid rgb(110, 110, 110);
+    width: 200px;
+   font-size: 35px;
+   padding: 5px;
+   background-color: white;
+  
+}
+
+.tittleEtiquetasMolinos{
+    border-radius: 5px;
+    border: 1px solid rgb(110, 110, 110);
+    width: 250px;
+   font-size: 35px;
+   padding: 5px;
+   background-color: white;
+   height: 130px;
+   text-align: center;
+}
+.separacionTextoM{
+    margin: 0px;
+    font-size: 2rem;
+
+}
+.fondo{
+
+   background-image: url("/img/carton1.jpg"); 
+   background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+}
+.tamañoLetra{
+    font-size: 15px;
+}
+.tamañoLetraClave{
+    font-size: 19px;
+    font-weight: bold;
+    color: #09487f;
+    text-align: center;
+}
+
+.tamañoLetraUsuarioCard{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(62, 12, 119);
+    text-align: center;
+}
+
+.titulosTyle{
+
+font-size: 18px;
+  font-weight: bold;
+  margin: 10px 10px -8px 10px;;
+
+}

@@ -1,0 +1,38 @@
+.colorComentaios{
+    color: #9c4221;
+}
+.positionComent{
+    display: flex;
+    flex-direction: column;
+}
+.position{
+    display: flex;
+    gap: 5rem;
+}
+
+.posicionComentario{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.comentEstilo{
+    margin-bottom: 1rem;
+    background:#f6e8cf ;
+    border:.5px solid rgb(187, 93, 36);
+    width: 200px;
+    
+}
+.stiloComentario{
+    margin: 5px;
+    color:#6d3716 ;
+}
+.stiloFecha{
+    margin: 5px;
+    color:#9a550e ;
+    font-size: 14px;
+}
+
+.estiloComponet{
+    margin: 2px;
+    color:#6d3716 ;
+}

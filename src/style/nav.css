@@ -1,0 +1,9 @@
+.mampara-style{
+  /*   background-image: url("../../../../public/img/madera.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+
+ /*    width: 1800px !important;
+    height: 1200px; */
+}

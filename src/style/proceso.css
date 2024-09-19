@@ -1,0 +1,14 @@
+.posicionamiento{
+    display: flex;
+    gap: 1rem;
+}
+
+.colorFormula{
+    font-size: 30px;
+    color: #ffffff;
+}
+.tamañoPremuestra{
+    font-size: 30px;
+}
+
+
