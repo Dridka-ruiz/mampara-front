@@ -12,6 +12,7 @@ import { styled } from "@mui/material/styles";
 import { MdMarkUnreadChatAlt } from "react-icons/md";
 import Typography from "@mui/material/Typography";
 import { AiFillAlert } from "react-icons/ai";
+import { MdIncompleteCircle } from "react-icons/md";
 
 const HtmlTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -32,6 +33,7 @@ export default function BasicPopover({
   onExtrudeClick,
   onUrgenciaChange,
   onComentarioClick,
+  onPausadoClick,
   id, // Agregar id como una propiedad
 }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -81,6 +83,12 @@ export default function BasicPopover({
   const handleUrgenciaChangeClick = () => {
     if (onUrgenciaChange) {
       onUrgenciaChange();
+    }
+    handleClose();
+  };
+  const handleEditClick3 = () => {
+    if (onPausadoClick) {
+      onPausadoClick();
     }
     handleClose();
   };
@@ -172,6 +180,19 @@ export default function BasicPopover({
             >
               <IconButton onClick={handleEditClick2}>
                 <AiOutlineFileDone color="#47B20F" />
+              </IconButton>
+            </HtmlTooltip>
+          )}
+          {id === 1 && (
+            <HtmlTooltip
+              title={
+                <React.Fragment>
+                  <Typography color="inherit">Producto Incompleto</Typography>
+                </React.Fragment>
+              }
+            >
+              <IconButton onClick={handleEditClick3}>
+                <MdIncompleteCircle color="#3c93f5" />
               </IconButton>
             </HtmlTooltip>
           )}

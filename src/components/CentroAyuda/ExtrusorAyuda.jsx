@@ -36,7 +36,7 @@ export default function CustomizedDialogs() {
 
     "img/Tutorial/1.png",
     "img/Tutorial/2.png",
-    "img/Tutorial/3.png",
+
     "img/Tutorial/4.png",
     "img/Tutorial/5.png",
     "img/Tutorial/6.png",

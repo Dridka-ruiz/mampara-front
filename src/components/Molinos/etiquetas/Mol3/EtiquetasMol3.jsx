@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import ExtrusionFormComents from "./comentarios";
 import { fetchProductos } from "../../../../api/apiEtiquetas";
+import IncompletoFromDialog from "./IncompletoFromDialog";
 
 const HtmlTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -40,6 +41,8 @@ const EtiquetasMol3 = ({ etiquetasMol3, setEtiquetasMol3, onSaved }) => {
   const [openDialog3, setOpenDialog3] = useState(false);
   const [selectedComents, setSelectedComents] = useState(null);
   const [productos, setProductos] = useState([]);
+  const [openDialog4, setOpenDialog4] = useState(false);
+  const [selectedEtiqueta4, setSelectedEtiqueta4] = useState(null);
 
   //console.log("mapeo de datos", etiquetasMol3);
   useEffect(() => {
@@ -131,6 +134,13 @@ const EtiquetasMol3 = ({ etiquetasMol3, setEtiquetasMol3, onSaved }) => {
     );
     setSelectedEtiqueta2(selected2);
     setOpenDialog2(true);
+  };
+  const handleIncompletoEtiqueta = (etiquetaId) => {
+    const selected4 = etiquetasMol3.find(
+      (etiqueta) => etiqueta.id === etiquetaId
+    );
+    setSelectedEtiqueta4(selected4);
+    setOpenDialog4(true);
   };
   const differenceInDays = (date1, date2) => {
     const diffInTime = new Date(date1) - new Date(date2);
@@ -255,6 +265,9 @@ const EtiquetasMol3 = ({ etiquetasMol3, setEtiquetasMol3, onSaved }) => {
                               } // Agregar esta línea
                               onExtrudeClick={() =>
                                 handleExtrudeEtiqueta(item.id)
+                              } // Agregar esta línea
+                              onPausadoClick={() =>
+                                handleIncompletoEtiqueta(item.id)
                               } // Agregar esta línea
                               id={item.id}
                             />
@@ -403,6 +416,14 @@ const EtiquetasMol3 = ({ etiquetasMol3, setEtiquetasMol3, onSaved }) => {
                 }}
                 etiqueta={selectedComents}
                 onSaved={onSaved} // Pass the onSaved prop to the child component
+              />
+              <IncompletoFromDialog
+                open={openDialog4}
+                onClose={() => {
+                  setOpenDialog4(false);
+                  setSelectedEtiqueta4(null);
+                }}
+                etiqueta={selectedEtiqueta4}
               />
             </ReactSortable>
           )}

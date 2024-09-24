@@ -11,13 +11,11 @@ import PermisoValidator from "../../../Login/PermisoValidator";
 import { FaExclamationTriangle } from "react-icons/fa";
 import { AiFillAlert } from "react-icons/ai";
 import ExtrusionFormComents from "./comentarios";
-
-//comentarios
-//import ExtrusionFormComents from "./comentarios";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { fetchProductos } from "../../../../api/apiEtiquetas";
+import IncompletoFromDialog from "./IncompletoFromDialog";
 
 const HtmlTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -42,6 +40,8 @@ const EtiquetasMol1 = ({ etiquetasMol1, setEtiquetasMol1, onSaved }) => {
   const [openDialog3, setOpenDialog3] = useState(false);
   const [selectedComents, setSelectedComents] = useState(null);
   const [productos, setProductos] = useState([]);
+  const [openDialog4, setOpenDialog4] = useState(false);
+  const [selectedEtiqueta4, setSelectedEtiqueta4] = useState(null);
 
   //console.log("mapeo de datos", etiquetasMol1);
   useEffect(() => {
@@ -54,10 +54,6 @@ const EtiquetasMol1 = ({ etiquetasMol1, setEtiquetasMol1, onSaved }) => {
         setEtiquetasMol1(etiquetasResponse.data);
         setProductos(productosResponse);
         setLoading(false);
-
-        /*  const response = await axios.get(apiUrlEtiquetasMol1);
-        setEtiquetasMol1(response.data);
-        setLoading(false); */
       } catch (error) {
         console.error("Error al cargar etiquetas desde la API", error);
         setLoading(false);
@@ -165,6 +161,15 @@ const EtiquetasMol1 = ({ etiquetasMol1, setEtiquetasMol1, onSaved }) => {
     setSelectedEtiqueta2(selected2);
     setOpenDialog2(true);
   };
+
+  const handleIncompletoEtiqueta = (etiquetaId) => {
+    const selected4 = etiquetasMol1.find(
+      (etiqueta) => etiqueta.id === etiquetaId
+    );
+    setSelectedEtiqueta4(selected4);
+    setOpenDialog4(true);
+  };
+
   const differenceInDays = (date1, date2) => {
     const diffInTime = new Date(date1) - new Date(date2);
     return diffInTime / (1000 * 3600 * 24);
@@ -258,6 +263,9 @@ const EtiquetasMol1 = ({ etiquetasMol1, setEtiquetasMol1, onSaved }) => {
                               } // Agregar esta línea
                               onExtrudeClick={() =>
                                 handleExtrudeEtiqueta(item.id)
+                              } // Agregar esta línea
+                              onPausadoClick={() =>
+                                handleIncompletoEtiqueta(item.id)
                               } // Agregar esta línea
                               id={item.id}
                             />
@@ -402,6 +410,14 @@ const EtiquetasMol1 = ({ etiquetasMol1, setEtiquetasMol1, onSaved }) => {
                 }}
                 etiqueta={selectedComents}
                 onSaved={onSaved} // Pass the onSaved prop to the child component
+              />
+              <IncompletoFromDialog
+                open={openDialog4}
+                onClose={() => {
+                  setOpenDialog4(false);
+                  setSelectedEtiqueta4(null);
+                }}
+                etiqueta={selectedEtiqueta4}
               />
             </ReactSortable>
           )}
