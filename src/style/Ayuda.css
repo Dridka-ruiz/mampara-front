@@ -1,0 +1,55 @@
+/* styles.css */
+.ayuda-container {
+    position: fixed !important;
+    right: 20px; /* Ajusta la distancia desde el lado derecho */
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    background-color: white; /* Fondo blanco */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+  
+
+  /* external css: flickity.css */
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+ /*    width: 850px; */
+/*  max-width: 100%; */
+  }
+  
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Estilo opcional */
+  }
+  
+  .carousel-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 5px;
+  }
+  
+  .carousel-button:hover {
+    opacity: 0.7;
+  }
+  
+  @keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+  }
+  
+  .vibrate {
+    animation: vibrate 0.8s infinite;
+  }
+  

@@ -42,6 +42,7 @@ import EtiquetaTable from "../extrusion/ComentariosGenerales/ComentariosGenerale
 import { fetchComentariosGlobales } from "../../api/extrusores/comentariosGenerales";
 
 import Reloj from "../reloj/Reloj";
+import ExtrusorAyuda from "../CentroAyuda/ExtrusorAyuda";
 
 const Mampara = () => {
   const [etiquetas, setEtiquetas] = useState([]);
@@ -147,7 +148,6 @@ const Mampara = () => {
             setEtiquetas={setEtiquetas}
           />
         </div>
-
         <ToastContainer />
         {/* estilo para etiquetas agregadas al extrusor */}
         <div className="fondo ">
@@ -240,7 +240,8 @@ const Mampara = () => {
             setComentariosGlobales={setComentariosGlobales}
           />
           <Reloj />
-        </div>
+        </div>{" "}
+        <ExtrusorAyuda />
       </div>
     </>
   );

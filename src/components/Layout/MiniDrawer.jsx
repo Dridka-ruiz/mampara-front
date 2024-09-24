@@ -33,6 +33,7 @@ import { TbClockCog } from "react-icons/tb";
 import { FaTruckFast } from "react-icons/fa6";
 import { useAuth } from "../Login/AuthContext";
 import User from "./user";
+//import ExtrusorAyuda from "../CentroAyuda/ExtrusorAyuda";
 
 const drawerWidth = 240;
 
@@ -190,7 +191,6 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
 
   const handleLogout = () => {
     logout(); // Llama a la función de logout del contexto de autenticación
@@ -363,6 +363,7 @@ export default function MiniDrawer() {
       <Box className="margenGlobal">
         <DrawerHeader />
         <Outlet />
+        {/*   <ExtrusorAyuda /> */}
       </Box>
     </Box>
   );
