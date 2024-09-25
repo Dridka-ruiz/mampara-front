@@ -1,173 +1,193 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import * as XLSX from "xlsx";
-import Button from "@mui/material/Button";
-import { FaFileExcel } from "react-icons/fa";
+import { saveAs } from "file-saver";
+import { RiFileExcel2Fill } from "react-icons/ri";
 
-const ExportToExcel = () => {
-  const [data, setData] = useState([]);
-
-  const endpoints = [
-    {
-      url: "http://localhost:3000/etiquetasExt54_2",
-      setState: "etiquetas54_2",
-    },
-    {
-      url: "http://localhost:3000/etiquetasBussl",
-      setState: "etiquetasBussl",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt70_2",
-      setState: "etiquetasExt70_2",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_4",
-      setState: "etiquetasExt54_4",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_5",
-      setState: "etiquetasExt54_5",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_1",
-      setState: "etiquetasExt54_1",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt58",
-      setState: "etiquetasExt58",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt40",
-      setState: "etiquetasExt40",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_3",
-      setState: "etiquetasExt54_3",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_7",
-      setState: "etiquetasExt54_7",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt70_1",
-      setState: "etiquetasExt70_1",
-    },
-    {
-      url: "http://localhost:3000/etiquetasBussll",
-      setState: "etiquetasBuss2",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt26_1",
-      setState: "etiquetasExt26_1",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt26_2",
-      setState: "etiquetasExt26_2",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_6",
-      setState: "etiquetasExt54_6",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt70_3",
-      setState: "etiquetasExt70_3",
-    },
-    {
-      url: "http://localhost:3000/etiquetasExt54_8",
-      setState: "etiquetasExt54_8",
-    },
-  ];
-
-  useEffect(() => {
-    endpoints.forEach(fetchData);
-  }, []);
-
-  const fetchData = async ({ url }) => {
+function ExportarExcel() {
+  const fetchDataAndExport = async () => {
     try {
-      const response = await axios.get(url);
-      setData((prevData) => [...prevData, ...formatData(response.data)]);
-    } catch (error) {
-      console.error(`Error al obtener datos desde ${url}:`, error);
-    }
-  };
+      // Realizar solicitudes a las tres APIs
+      const [
+        dataExt,
+        dataBussl,
+        dataExt70,
+        dataExt54_4,
+        dataExt54_5,
+        dataExt54_1,
+        dataExt58,
+        dataExt40,
+        dataExt54_3,
+        dataExt54_7,
+        dataExt72,
+        dataBussll,
+        dataExt26_1,
+        dataExt54_6,
+        dataExt73,
+        dataExt54_8,
+      ] = await Promise.all([
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_2"
+        ).then((res) => res.json()),
+        fetch("https://operaciones-mampara-dun.vercel.app/etiquetasBussl").then(
+          (res) => res.json()
+        ),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt70_2"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_4"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_5"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_1"
+        ).then((res) => res.json()),
+        fetch("https://operaciones-mampara-dun.vercel.app/etiquetasExt58").then(
+          (res) => res.json()
+        ),
+        fetch("https://operaciones-mampara-dun.vercel.app/etiquetasExt40").then(
+          (res) => res.json()
+        ),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_3"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_7"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt70_1"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasBussll"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt26_1"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_6"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt70_3"
+        ).then((res) => res.json()),
+        fetch(
+          "https://operaciones-mampara-dun.vercel.app/etiquetasExt54_8"
+        ).then((res) => res.json()),
+      ]);
 
-  const formatDate = (date) => {
-    const [year, month, day] = date.split("-");
-    return `${day}/${month}/${year}`;
-  };
+      // Función para formatear fechas
+      const formatDate = (dateString) =>
+        new Date(dateString).toLocaleDateString(undefined, {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        });
 
-  const formatDate2 = (date) => {
-    const [day, month, year] = date.split("-");
-    return `${day}/${month}/${year}`;
-  };
-
-  const formatData = (data) => {
-    return data.map(
-      ({
-        fecha,
-        fecha_entrega,
-        polvos,
-        comentarios,
-        estado,
-        cambios_usuario,
-        incremento,
-        proceso,
-        premuestra,
-        urgencias,
-        productoId,
-        createdAt,
-        updatedAt,
-        fecha_real,
-        hora_real,
-        tpd,
-        hora_tpd,
-        ...rest
-      }) => ({
-        ...rest,
-        fecha_entrega: formatDate(fecha),
-        fecha_llegada: formatDate(fecha_entrega),
-        fecha_termino: formatDate(fecha_real),
-        hora_termino: hora_real,
-        fecha_tpd: formatDate2(tpd),
-        hora_tpd: hora_tpd,
-      })
-    );
-  };
-
-  const exportToExcel = () => {
-    try {
-      const workbook = XLSX.utils.book_new();
-      const worksheet = XLSX.utils.json_to_sheet(data);
-
-      // Calcular el ancho de las columnas
-      const columnWidths = Object.keys(data[0]).map((key) => {
-        const maxLength = Math.max(
-          ...data.map((row) => String(row[key]).length)
+      // Filtrar y formatear datos de las APIs
+      const filterData = (data) =>
+        data.map(
+          ({
+            estado,
+            incremento,
+            procesos,
+            premuestra,
+            cambios_usuario,
+            proceso,
+            urgencias,
+            comentarios,
+            productoId,
+            createdAt,
+            updatedAt,
+            polvos,
+            fecha,
+            fecha_entrega,
+            fecha_real,
+            hora_real,
+            tpd,
+            hora_tpd,
+            ...rest
+          }) => ({
+            ...rest,
+            "Fecha entrega": formatDate(fecha),
+            "Fecha llegada": formatDate(fecha_entrega),
+            "Fecha Termino": formatDate(fecha_real),
+            "Hora Termino": hora_real,
+            "Fecha Termino (TPD)": tpd,
+            "Hora Termino (TPD)": hora_tpd,
+          })
         );
-        return { wch: maxLength > 10 ? maxLength : 10 }; // Ancho mínimo de 10
+
+      const combinedData = [
+        ...filterData(dataExt),
+        ...filterData(dataBussl),
+        ...filterData(dataExt70),
+        ...filterData(dataExt54_4),
+        ...filterData(dataExt54_5),
+        //
+        ...filterData(dataExt54_1),
+        ...filterData(dataExt58),
+        ...filterData(dataExt40),
+        ...filterData(dataExt54_3),
+        ...filterData(dataExt54_7),
+        ...filterData(dataExt72),
+        ...filterData(dataBussll),
+        ...filterData(dataExt26_1),
+        ...filterData(dataExt54_6),
+        ...filterData(dataExt73),
+        ...filterData(dataExt54_8),
+      ];
+
+      // Generar y guardar el archivo Excel
+      const worksheet = XLSX.utils.json_to_sheet(combinedData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Datos Combinados");
+
+      // Ajustar el ancho de las columnas basado en el contenido
+      const maxWidths = combinedData.reduce((acc, row) => {
+        Object.keys(row).forEach((key, index) => {
+          const cellValue = row[key]?.toString() || "";
+          acc[index] = Math.max(acc[index] || 0, cellValue.length);
+        });
+        return acc;
+      }, []);
+
+      worksheet["!cols"] = maxWidths.map((width) => ({
+        width: width < 10 ? 10 : width,
+      }));
+
+      // Guardar el archivo
+      const excelBuffer = XLSX.write(workbook, {
+        bookType: "xlsx",
+        type: "array",
       });
-
-      worksheet["!cols"] = columnWidths;
-
-      XLSX.utils.book_append_sheet(workbook, worksheet, "mampara");
-      XLSX.writeFile(workbook, "mampara.xlsx");
+      saveAs(
+        new Blob([excelBuffer], { type: "application/octet-stream" }),
+        "Etiquetas_Combinadas.xlsx"
+      );
     } catch (error) {
-      console.error("Error al exportar a Excel:", error);
+      console.error("Error al obtener o exportar los datos:", error);
     }
   };
 
   return (
     <div>
-      <Button
-        startIcon={<FaFileExcel />}
-        variant="contained"
-        onClick={exportToExcel}
-        color="success"
+      <button
+        onClick={fetchDataAndExport}
+        style={{
+          background: "green",
+          display: "flex",
+          gap: "0.5rem",
+        }}
       >
+        <RiFileExcel2Fill
+          style={{
+            fontSize: "25px",
+          }}
+        />
         Exportar a Excel
-      </Button>
+      </button>
     </div>
   );
-};
+}
 
-export default ExportToExcel;
+export default ExportarExcel;
