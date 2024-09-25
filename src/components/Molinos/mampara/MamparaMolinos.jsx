@@ -33,6 +33,7 @@ import EtiquetasMol4A from "../etiquetas/Mol4A/EtiquetasMol4A";
 import FichasFechas from "../../fichasInformativas/fichasFechas";
 import AlertaTemporada from "../Mantenimiento/AlertaTemporada";
 import ProductFinal from "../global/ProductosTerminadosE/ProductFinal";
+import ExtrusorAyuda from "../../CentroAyuda/MamparaAyuda";
 
 const MamparaMolinos = () => {
   const [etiquetas, setEtiquetas] = useState([]);
@@ -213,6 +214,7 @@ const MamparaMolinos = () => {
             />
           </div>
         </div>
+        <ExtrusorAyuda />
       </div>
     </>
   );
